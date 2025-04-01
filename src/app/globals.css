@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #1B1B1B;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.text-subtle-gold {
+    background-image: linear-gradient(90deg, rgba(232,198,135,1) 0%, rgba(193,153,94,1) 100%);
+    color: transparent;
+    background-clip: text;
+}
