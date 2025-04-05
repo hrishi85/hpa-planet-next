@@ -2,11 +2,12 @@ import PageFooter from "@/components/footer";
 import PageHeader from "@/components/header";
 import PagePFooter from "@/components/prefooter";
 import Image from "next/image";
+import Link from "next/link"
 export default function Contact() {
     return (
         <>
             <PageHeader />
-            <section className="w-full h-screen bg-">
+            <section className="w-full h-screen bg-darkgrey py-[140px]">
                 <article className="container mx-auto bg-dark flex rounded-[16px] py-[85px] px-[80px]">
                     <section className="flex-1 p-12">
                         <h3 className="text-[24] text-center text-ocre italic">Got a lit track in mind</h3>
@@ -29,9 +30,9 @@ export default function Contact() {
 
                     <section className="flex-1 p-12">
                         <div className="flex justify-center">
-                            <button className="items-center border border-ocre w-[180px] h-[48px]">
-                                <a href="" className="block text-ocre">HPA Records</a>
-                            </button>
+                        <Link href="/" className="block text-ocre">
+                            <Image src="/assets/images/HPA-logo.webp" width={144} height={32} alt="HPA Logo" />
+                        </Link>
                         </div>
 
                         <div className="pl-[78px] mt-[115px]">

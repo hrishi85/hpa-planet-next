@@ -17,3 +17,156 @@ html, body {
     color: transparent;
     background-clip: text;
 }
+
+.font-medium {
+    font-weight: 600;
+}
+.font-extralight {
+    font-weight: 300;
+}
+
+.eb-garamond-400 {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* NEWS SWIPER SETTINGS */
+.new-swiper .swiper-slide {
+    width: 28%;
+}
+
+.new-swiper .swiper-horizontal > .swiper-pagination-bullets, .new-swiper .swiper-pagination-bullets.swiper-pagination-horizontal, .new-swiper .swiper-pagination-custom, .swiper-pagination-fraction {
+    position: static;
+    margin-top: -10px;
+}
+
+.new-swiper .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .new-swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+
+.new-swiper .swiper-pagination-bullet {
+    width: 25%;
+    height: 8px;
+    border-radius: 5px;
+    background: #2D2D2D;
+}
+.new-swiper .swiper-pagination-bullet-active  {
+    background: #C59C40;
+}
+
+@media (min-width: 768px) {
+    .news-swiper .swiper-pagination-bullet {
+        width: 50%;
+    }
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    display: inline-flex;
+    /* bottom: -20px; */
+    left: 50% !important;
+    width: auto !important;
+}
+
+.text-subtle-gold {
+    background-image: linear-gradient(90deg, rgba(232,198,135,1) 0%, rgba(193,153,94,1) 100%);
+    color: transparent;
+    background-clip: text;
+}
+.golden-shadows {
+    text-shadow: 0 0 1px #C59C40;
+}
+
+
+/* plus / minus animation */
+.closed .vertical {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz--transition: all 0.5s ease-in-out;
+    -ms--transition: all 0.5s ease-in-out;
+    -o--transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.closed .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+}
+  
+.opened {
+    opacity: 1;
+}
+.opened .collapsible-title {
+    background: #0E0E0E;
+}
+.collapsible:hover .collapsible-title {
+    background: #0E0E0E;
+}
+.opened .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+}
+.opened .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+}
+.circle-plus {
+    height: 32px;
+    width: 32px;
+    position: relative;
+}
+.circle-plus .horizontal {
+    position: absolute;
+    background-color: white;
+    width: 32px;
+    height: 2px;
+    left: 50%;
+    margin-left: -15px;
+    top: 50%;
+    margin-top: -1px;
+}
+.circle-plus .vertical {
+    position: absolute;
+    background-color: white;
+    width: 2px;
+    height: 32px;
+    left: 50%;
+    margin-left: -1px;
+    top: 50%;
+    margin-top: -15px;
+}
+
+
+
+/* Hero sections wiper settings */
+.slide-1 {
+    background-image: url(/public/assets/img/cont/home/hero/slide-1.webp);
+    background-size: cover;
+    background-position: center;
+}
+.slide-2 {
+    background-image: url(/public/assets/img/cont/home/hero/slide-2.webp);
+    background-size: cover;
+    background-position: center;
+}
+.hero-swiper .swiper-horizontal>.swiper-pagination-bullets, .hero-swiper .swiper-pagination-bullets.swiper-pagination-horizontal, .hero-swiper .swiper-pagination-custom, .swiper-pagination-fraction {
+    left: auto;
+    right: 6vw;
+    bottom: 3vw;
+}
+.hero-swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .hero-swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+    background: #BFBFBF;
+    opacity: 1;
+}
+.hero-swiper .swiper-pagination-bullet-active {
+    background: #C59C40 !important;
+}

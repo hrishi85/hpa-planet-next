@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function PagePFooter(){
     return(
         <section className="bg-dark">
             <article className="container py-3 mx-auto flex text-white py-8">
                 <div className="w-1/3">
-                    <button className="block border border-ocre w-[180px] h-[48px]">
-                        <a href="" className="block text-ocre">HPA Records</a>
-                    </button>
+                    <Link href="/" className="block text-ocre">
+                        <Image src="/assets/images/HPA-logo.webp" width={144} height={32} alt="HPA Logo" />
+                    </Link>
                 </div>
                 <div className="footer_list w-1/3 flex justify-center items">
                     <ul className="list-disc pl-5 text-white">
