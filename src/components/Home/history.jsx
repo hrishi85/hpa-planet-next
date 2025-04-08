@@ -1,4 +1,4 @@
-import CustomHeading from "../customHeading"
+import CustomHeading from "../customHeading";
 export default function History(){
     return(
     <section className="w-full h-auto py-[10vw]">
