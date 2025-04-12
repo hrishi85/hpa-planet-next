@@ -142,19 +142,10 @@ html, body {
     margin-top: -15px;
 }
 
-
-
-/* Hero sections wiper settings */
-.slide-1 {
-    background-image: url(/public/assets/img/cont/home/hero/slide-1.webp);
-    background-size: cover;
-    background-position: center;
+.hero-header-bg {
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 60%,rgba(0,0,0,0.9) 100%);
 }
-.slide-2 {
-    background-image: url(/public/assets/img/cont/home/hero/slide-2.webp);
-    background-size: cover;
-    background-position: center;
-}
+
 .hero-swiper .swiper-horizontal>.swiper-pagination-bullets, .hero-swiper .swiper-pagination-bullets.swiper-pagination-horizontal, .hero-swiper .swiper-pagination-custom, .swiper-pagination-fraction {
     left: auto;
     right: 6vw;
