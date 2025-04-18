@@ -8,7 +8,7 @@ export default function Contact() {
         <>
             <PageHeader />
             <section className="w-full h-screen bg-darkgrey py-[140px]">
-                <article className="container mx-auto bg-dark flex rounded-[16px] py-[85px] px-[80px]">
+                <article className="container mx-auto bg-dark flex rounded-[16px] py-[100px] px-[100px] pb-[50px]">
                     <section className="flex-1 p-12">
                         <h3 className="text-[24] text-center text-ocre italic">Got a lit track in mind</h3>
                         <h1 className="text-[36px] font-bold text-center text-white">Let's Connect</h1>
@@ -42,7 +42,7 @@ export default function Contact() {
                             </div>
                             <div className="mt-[46px]">
                                 <p className="text-white italic">Write to us on:</p>
-                                <p className="text-ocre italic">contact@hpaplanet.com | hello@hpaplanet.com</p>
+                                <p className="text-ocre italic">contact@hpapla.net</p>
                             </div>
                         </div>
 
