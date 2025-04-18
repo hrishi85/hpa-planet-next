@@ -13,11 +13,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import ResponsiveContainer from "../ResponsiveContainer";
 
 export default () => {
+
+
+
     return (
         <section className="w-full py-[10vw]">
-            <article className="container mx-auto">
+            <ResponsiveContainer>
                 <header className="title-block relative pb-8">
                     <CustomHeading text1={"Studio"} text2={"Buzz"}/>
                 </header>
@@ -26,12 +30,17 @@ export default () => {
                     // install Swiper modules
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
-                    slidesPerView={3}
+                    slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
                     className="news-swiper"
+                    breakpoints={{
+                        1024: {
+                          slidesPerView: 3,
+                        },
+                    }}
                 >
                     <SwiperSlide>
                         <div className="bg-midgrey p-4 rounded-xl">
@@ -69,7 +78,7 @@ export default () => {
                         </div>
                     </SwiperSlide>
                 </Swiper>
-            </article>
+            </ResponsiveContainer>
         </section>
     );
 };
