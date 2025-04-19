@@ -45,7 +45,6 @@ html, body {
     background: linear-gradient(180deg, rgba(232,198,135,1) 0%, rgba(193,153,94,1) 100%);
     border-radius: 6px;
     opacity: 1 !important;
-    cursor: grab;  /* Ensure the thumb is clickable and draggable */
 }
 
 /* Move vertical scrollbar 50px to the right */
@@ -62,8 +61,13 @@ html, body {
 }
 
 .custom-scrollbar .simplebar-scrollbar:hover::before {
+    cursor: grab;  /* Change cursor to grabbing when dragging */
+}
+
+.custom-scrollbar .simplebar-scrollbar:active::before {
     cursor: grabbing;  /* Change cursor to grabbing when dragging */
 }
+
 
 /* Ensure the thumb is draggable even when not hovering */
 .custom-scrollbar .simplebar-scrollbar::before {
