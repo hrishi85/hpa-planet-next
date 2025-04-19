@@ -1,0 +1,60 @@
+Html with tailwind 3.4.17:
+<article className="pt-[115px] pl-[100px] flex-1">
+						<h3 className="text-subtle-gold text-[24px] font-medium">Real_Name_2 AKA</h3>
+						<h1 className="text-subtle-gold text-[48px] font-extrabold">Artist_Name_2</h1>
+						<p className="text-white text-sm mt-[65px]">Birthdate</p>
+						<SimpleBar
+							className="mt-[25px] custom-scrollbar"
+							forceVisible="y"
+							autoHide={false}
+							style={{
+							maxHeight: 300,
+							width: 480,
+							}}
+						>
+							<p className="text-text-grey text-sm">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							</p>
+						</SimpleBar>
+					</article>
+
+
+
+
+
+
+
+
+CSS:
+/* Target scrollbar thumb */
+.custom-scrollbar .simplebar-scrollbar::before {
+    content: '';
+    background: linear-gradient(180deg, rgba(232,198,135,1) 0%, rgba(193,153,94,1) 100%);
+    border-radius: 6px;
+    opacity: 1 !important;
+}
+  
+/* Move vertical scrollbar 50px to the right */
+.custom-scrollbar .simplebar-track.simplebar-vertical {
+    right: -50px !important;
+    width: 6px !important;
+}
+  
+/* Hide horizontal scrollbar */
+.custom-scrollbar .simplebar-track.simplebar-horizontal {
+    display: none !important;
+}
+
+
+this works, however, I need to increase the width of the scrollbar, set the track color to bg-darkgrey and make the scrollbar clickable and draggable

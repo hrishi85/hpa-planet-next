@@ -12,17 +12,22 @@ html, body {
     color: white;
 }
 
-.ps__rail-y  {
+/* Always show vertical scrollbar rail */
+.ps__rail-y {
     opacity: 1 !important;
     width: 4px !important;
-}
-.ps__thumb-x,
+    right: 0px; /* ensure it's aligned correctly */
+  }
+  
+/* Style the vertical scrollbar thumb */
 .ps__thumb-y {
     background-image: linear-gradient(90deg, rgba(232,198,135,1) 0%, rgba(193,153,94,1) 100%);
     width: 6px !important;
     margin-right: -3px !important;
+    border-radius: 4px;
 }
-.ps--active-x > .ps__rail-x,
+
+/* Optional: dark background for the rail when active or hovered */
 .ps--active-y > .ps__rail-y,
 .ps .ps__rail-x:hover,
 .ps .ps__rail-y:hover,
@@ -31,6 +36,38 @@ html, body {
 .ps .ps__rail-x.ps--clicking,
 .ps .ps__rail-y.ps--clicking {
     background: #1B1B1B !important;
+}
+
+
+/* Target scrollbar thumb */
+.custom-scrollbar .simplebar-scrollbar::before {
+    content: '';
+    background: linear-gradient(180deg, rgba(232,198,135,1) 0%, rgba(193,153,94,1) 100%);
+    border-radius: 6px;
+    opacity: 1 !important;
+    cursor: grab;  /* Ensure the thumb is clickable and draggable */
+}
+
+/* Move vertical scrollbar 50px to the right */
+.custom-scrollbar .simplebar-track.simplebar-vertical {
+    right: -50px !important;
+    width: 8px !important; /* Set the width of the scrollbar to 8px */
+    background-color: #1B1B1B; /* Dark grey background for the track */
+    border-radius: 8px; /* Optional: rounds the corners of the scrollbar track */
+}
+
+/* Hide horizontal scrollbar */
+.custom-scrollbar .simplebar-track.simplebar-horizontal {
+    display: none !important;
+}
+
+.custom-scrollbar .simplebar-scrollbar:hover::before {
+    cursor: grabbing;  /* Change cursor to grabbing when dragging */
+}
+
+/* Ensure the thumb is draggable even when not hovering */
+.custom-scrollbar .simplebar-scrollbar::before {
+    pointer-events: all;  /* Make sure the thumb can be clicked and dragged */
 }
 
 .text-subtle-gold {
