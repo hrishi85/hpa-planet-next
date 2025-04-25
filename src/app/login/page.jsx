@@ -57,7 +57,7 @@ export default function Login() {
                         <Form className="pt-16">
                             <div className="space-y-4">
                                 <div>
-                                    <label for="email" className="text-white ml-[1px]">Email *</label>
+                                    <label htmlFor="email" className="text-white ml-[1px]">Email *</label>
                                     <Field
                                         name="email"
                                         type="email"
@@ -70,7 +70,7 @@ export default function Login() {
                                 </div>
 
                                 <div className="mt-[5px] relative">
-                                    <label for="password" className="text-white ml-[1px]">Password *</label>
+                                    <label htmlFor="password" className="text-white ml-[1px]">Password *</label>
                                     <Field
                                         name="password" 
                                         type={passShow?"text":"password"}

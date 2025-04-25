@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PagePFooter(){
     return(
         <section className="bg-dark">
-            <article className="container py-3 mx-auto flex text-white py-8">
+            <article className="container mx-auto flex text-white py-8">
                 <div className="w-1/3">
                     <Link href="/" className="block text-ocre">
                         <Image src="/assets/images/HPA-logo.webp" width={144} height={32} alt="HPA Logo" />
