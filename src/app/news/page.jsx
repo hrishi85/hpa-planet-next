@@ -20,7 +20,7 @@ async function fetchNews() {
     	return data?.data || [];
 
 	} catch (err) {
-		console.error('Error fetching news:', error);
+		console.error('Error fetching news:', err);
     	return [];
 	}
 }
