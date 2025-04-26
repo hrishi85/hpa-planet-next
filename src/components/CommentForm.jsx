@@ -23,17 +23,17 @@ export default function CommentForm({ newsId, onNewComment }) {
 	
 	const handleSubmit = async (values, { resetForm }) => {
 
-		const token = await recaptchaRef.current.executeAsync();
-		recaptchaRef.current.reset();
+		// const token = await recaptchaRef.current.executeAsync();
+		// recaptchaRef.current.reset();
 
-		const captchaRes = await fetch('/api/verify-captcha', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ token }),
-		});
+		// const captchaRes = await fetch('/api/verify-captcha', {
+		// 	method: 'POST',
+		// 	headers: { 'Content-Type': 'application/json' },
+		// 	body: JSON.stringify({ token }),
+		// });
 	
-		const { success } = await captchaRes.json();
-		if (!success) setCaptchaError("Captcha failed");	
+		// const { success } = await captchaRes.json();
+		// if (!success) setCaptchaError("Captcha failed");	
 
 		setStatus('Submitting...');
 		
@@ -78,10 +78,10 @@ export default function CommentForm({ newsId, onNewComment }) {
 					</div>
 					<div className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
                         <div className="lg:w-1/2">
-							<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} size="invisible" />
+							{/* <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} size="invisible" />
 							{
 								captchaError && <p className='w-full text-red-500 leading-16'>captchaError</p>
-							}
+							} */}
                         </div>
                         <div className="lg:w-1/2 ">
 							<button type="submit" className="block w-full bg-subtle-gold hover:scale-105 transition-all h-[56px] leading-[56px] text-white px-4 rounded" >Submit</button>

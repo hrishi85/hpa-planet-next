@@ -25,17 +25,17 @@ export default function ContactForm() {
 	});
 	const handleSubmit = async (values, { setSubmitting, resetForm }) => {
 
-        const token = await recaptchaRef.current.executeAsync();
-		recaptchaRef.current.reset();
+        // const token = await recaptchaRef.current.executeAsync();
+		// recaptchaRef.current.reset();
 
-		const captchaRes = await fetch('/api/verify-captcha', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ token }),
-		});
+		// const captchaRes = await fetch('/api/verify-captcha', {
+		// 	method: 'POST',
+		// 	headers: { 'Content-Type': 'application/json' },
+		// 	body: JSON.stringify({ token }),
+		// });
 	
-		const { success } = await captchaRes.json();
-		if (!success) setCaptchaError("Captcha failed");	
+		// const { success } = await captchaRes.json();
+		// if (!success) setCaptchaError("Captcha failed");
 
 		setStatus('Submitting...');
 
@@ -92,10 +92,10 @@ export default function ContactForm() {
 
                     <div className="w-full flex justify-center lg:justify-end">
                         <div className="flex-1">
-                            <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} size="invisible" />
+                            {/* <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} size="invisible" />
 							{
 								captchaError && <p className='w-full text-red-500 leading-16'>captchaError</p>
-							}
+							} */}
                         </div>
                         <button type="submit" disabled={isSubmitting} className="flex-1 bg-ocre text-dark block leading-[56px] lg:leading-[56px] rounded-[6px] w-full text-center text-sm lg:text-lg font-light transition-all hover:bg-gold">
                             <span className="mr-3">
