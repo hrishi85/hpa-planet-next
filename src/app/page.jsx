@@ -12,7 +12,7 @@ const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
 
 async function fetchData() {
 	try {
-		const [tracksRes, servicesRes, newspRes] = await Promise.all([
+		const [tracksRes, servicesRes, newspRes, historyRes] = await Promise.all([
 			fetch(`${baseURL}/api/tracks?populate=banner&pagination[limit]=5`).then(res => res.json()),
 			fetch(`${baseURL}/api/services?populate=thumbnail`).then(res => res.json()),
 			fetch(`${baseURL}/api/newsp?pagination[limit]=4&populate=banner`).then(res => res.json()),
