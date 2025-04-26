@@ -16,14 +16,14 @@ async function fetchData() {
 			fetch(`${baseURL}/api/tracks?populate=banner&pagination[limit]=5`).then(res => res.json()),
 			fetch(`${baseURL}/api/services?populate=thumbnail`).then(res => res.json()),
 			fetch(`${baseURL}/api/newsp?pagination[limit]=4&populate=banner`).then(res => res.json()),
-			// fetch(`${baseURL}/api/history`).then(res => res.json()),
+			fetch(`${baseURL}/api/history`).then(res => res.json()),
 		]);
   
 		return {
 			tracks: tracksRes.data || [],
 			services: servicesRes.data || [],
 			newsp: newspRes.data || [],
-			// history: historyRes.data || null,
+			history: historyRes.data || null,
 			error: null,
 		};
 	} catch (err) {
@@ -32,7 +32,7 @@ async function fetchData() {
 			tracks: [],
 			services: [],
 			newsp: [],
-			// history: null,
+			history: null,
 			error: 'Failed to load content. Please try again later.',
 	  	};
 	}
@@ -41,7 +41,7 @@ async function fetchData() {
 
 export default async function Home() {
 
-	const { tracks, services, newsp, error } = await fetchData();
+	const { tracks, services, newsp, history, error } = await fetchData();
 
 	if (error) {
 		return <div className="flex w-full h-full items-center justify-center text-red-600">{error}</div>;
@@ -56,9 +56,9 @@ export default async function Home() {
 			{
 				services && services.length > 0 && ( <Services services={services} /> )
 			}
-			{/* {
+			{
 				history && history.companyHistory && ( <History history={history.companyHistory} /> )
-			} */}
+			}
 			{
 				newsp && newsp.length > 0 && ( <News news={newsp} /> )
 			}
