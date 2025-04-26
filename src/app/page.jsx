@@ -8,10 +8,11 @@ import Contact from "@/components/Home/contact";
 import HeroSection from "@/components/Home/hero";
 import { getURL } from "next/dist/shared/lib/utils";
 
-const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
 
 async function fetchData() {
 	try {
+		console.log( baseURL, "baseURL" );
 		const [tracksRes, servicesRes, newspRes, historyRes] = await Promise.all([
 			fetch(`${baseURL}/api/tracks?populate=banner&pagination[limit]=5`).then(res => res.json()),
 			fetch(`${baseURL}/api/services?populate=thumbnail`).then(res => res.json()),

@@ -17,6 +17,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import ResponsiveContainer from "../ResponsiveContainer";
 
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
+
 export default ({ news }) => {
     if(!news || news.length < 1) {
         return (
@@ -54,7 +56,7 @@ export default ({ news }) => {
                             return (
                                 <SwiperSlide>
                                     <article key={newsItem.id} className="bg-midgrey p-4 rounded-xl">
-                                        <Image src={`http://localhost:1337${newsItem.banner.url}`} alt={newsItem.title} className="rounded-lg mb-4 w-full h-auto" width={425} height={240}  />
+                                        <Image src={`${baseURL}${newsItem.banner.url}`} alt={newsItem.title} className="rounded-lg mb-4 w-full h-auto" width={425} height={240}  />
                                         <h2 className="text-[22px] font-bold mb-2 text-white">{newsItem.title}</h2>
                                         <p className="text-gray-300 text-sm mb-4">{shortDescription}</p>
                                         <Link href={`/news/${newsItem.documentId}`} className="text-yellow-400 font-semibold">Read more</Link>

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { shortenTextByWords } from "@/utils";
 
-const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
 
 async function fetchNews() {
 	try {

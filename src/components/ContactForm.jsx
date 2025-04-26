@@ -5,8 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
-const captchaSiteKey = process.env.RECAPTCHA_SITE_KEY;
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
+const captchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 export default function ContactForm() {
 

@@ -4,7 +4,7 @@ import CustomHeading from "../customHeading"
 import Image from "next/image";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
-const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
 
 export default function Services({services}) {
 

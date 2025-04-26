@@ -14,7 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
 
 export default function HeroSection({ tracks }) {
     

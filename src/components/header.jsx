@@ -39,18 +39,6 @@ const linkVariants = {
 	visible: { opacity: 1, x: 0 },
 };
 
-const getArticles = async () => {
-	const res = await fetch('https://your-strapi-api.com/api/articles', {
-		cache: 'no-store', // use 'force-cache' if you want to cache the result
-	});
-  
-	if (!res.ok) {
-		throw new Error('Failed to fetch articles');
-	}
-	const data = await res.json();
-	return data;
-};
-
 export default function PageHeader() {
 
 	const [isMenuActive, setIsMenuActive] = useState(false);
