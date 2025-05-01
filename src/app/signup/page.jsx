@@ -23,7 +23,7 @@ export default function Signup() {
 
     const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{6,16}$/;
 
-    const initialValues = { username: "hrishi85", email: "hrishikeshyjoshi@gmail.com", inviteID: "asdfasdfasdfasdf", password: "Asdf@85", confirmPassword: "Asdf@85" };
+    const initialValues = { username: "", email: "", inviteID: "", password: "", confirmPassword: "" };
         const validationSchema = Yup.object().shape({
                 username: Yup.string().required("Username is required").min(3, "Minimum 6 characters required").max(16, "Maximum limit of 18 exceeded"),
                 email: Yup.string().required("Email is required").email("Invalid email format"),
