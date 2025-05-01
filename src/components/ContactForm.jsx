@@ -90,7 +90,7 @@ export default function ContactForm() {
                         <ErrorMessage name="message" component="p" className="text-red-500 text-sm mt-1" />
                     </div>
 
-                    <div className="w-full flex justify-center lg:justify-end">
+                    <div className="w-full block lg:flex justify-center lg:justify-end">
                         <div className="flex-1">
                             {/* <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} size="invisible" />
 							{
@@ -99,7 +99,7 @@ export default function ContactForm() {
                         </div>
                         <button type="submit" disabled={isSubmitting} className="flex-1 bg-ocre text-dark block leading-[56px] lg:leading-[56px] rounded-[6px] w-full text-center text-sm lg:text-lg font-light transition-all hover:bg-gold">
                             <span className="mr-3">
-                                {isSubmitting ? "Submitting..." : "Share your details"}
+                                {isSubmitting ? "Submitting..." : "Get in touch"}
                             </span>
                             <span className="arrow"></span>
                         </button>

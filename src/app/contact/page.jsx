@@ -11,7 +11,7 @@ export default function Contact() {
         <>
             <PageHeader />
             <ResponsiveContainer>
-                <section className="flex flex-col lg:flex-row bg-dark my-[60px] lg:my-[100px] p-[50px] lg:p-[80px] rounded-[16px]">
+                <section className="flex flex-col lg:flex-row bg-dark my-[20vw] lg:my-[10vw] p-[50px] lg:p-[80px] rounded-[16px]">
                     <article className="lg:flex-1 justify-center lg:pr-[80px]">
                         <h3 className="text-[24px] text-center text-ocre italic">Got a lit track in mind</h3>
                         <h1 className="text-[36px] font-bold text-center text-white">Let's Connect</h1>

@@ -10,7 +10,7 @@ export default function CommentsSection({ newsComments, newsDocumentId }) {
     };
 
     return (
-        <article className="w-full bg-dark px-[2vw] py-[1.5vw] flex">
+        <article className="w-full bg-dark px-[2vw] py-[1.5vw] lg:flex">
             <section className="flex-1">
                 <CommentForm newsId={newsDocumentId} onNewComment={handleNewComment} />
             </section>
@@ -26,7 +26,7 @@ export default function CommentsSection({ newsComments, newsDocumentId }) {
                             );
                         })
                     ) : (
-                        <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-full h-full flex items-center justify-center pt-[10vw] pb-[15vw]">
                             <h2 className="text-silver">- No commnets to display -</h2>
                         </div>
                     )

@@ -5,7 +5,9 @@ import { useState } from "react";
 import { usePathname } from 'next/navigation';
 
 
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion";
+import { getURL } from "next/dist/shared/lib/utils";
+
 
 const menuItems = [
 	{ title: "Home", route: "/", key: "home" },
@@ -13,7 +15,8 @@ const menuItems = [
 	{ title: "Artists", route: "/artists", key: "artists" },
 	{ title: "News", route: "/news", key: "news" },
 	{ title: "Contact", route: "/contact", key: "contact" },
-	{ title: "Sign In", route: "/login", key: "login" },
+	{ title: "Sign In", route: "http://localhost:1337/admin", key: "login" },
+	{ title: "Sign up", route: "/signup", key: "register" },
 ];
 
 const menuVariants = {
@@ -65,7 +68,13 @@ export default function PageHeader() {
 									{
 										menuItems.map((item) => (
 											<motion.li key={item.key} variants={linkVariants} className=" text-lg leading-[1.2em]">
-												<Link href={item.route} className={`${pathname === item.route ? "text-ocre" : "text-silver"}`}>{item.title}</Link>
+												{
+													item.key === "login" ? (
+														<Link href={item.route} target="_blank" rel="noopener noreferrer">{item.title}</Link>
+													) : (
+														<Link href={item.route} className={`${pathname === item.route ? "text-ocre" : "text-silver"}`}>{item.title}</Link>
+													)
+												}
 											</motion.li>
 										))
 									}

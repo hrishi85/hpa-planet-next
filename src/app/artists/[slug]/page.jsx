@@ -47,7 +47,7 @@ export default async function ArtistPage({ params }) {
 		<>
 			<PageHeader />
 			<ResponsiveContainer>
-				<article className="bg-dark mt-[8vw] mb-[5vw] lg:flex">
+				<article className="bg-dark mt-[20vw] lg:mt-[8vw] mb-[12vw] lg:mb-[5vw] lg:flex">
 					<section className="w-full lg:w-1/2 p-8 lg:p-0">
 						{
 							profilePic && 
@@ -64,7 +64,7 @@ export default async function ArtistPage({ params }) {
 				
 				{
 					artist.tracks && artist.tracks.length > 0 && (
-						<section className="w-full">
+						<section className="w-full mb-[3vw]">
 							<TracksSlider tracks={artist.tracks} age={age} />
 						</section>
 					)

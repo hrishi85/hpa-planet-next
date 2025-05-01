@@ -14,7 +14,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import ResponsiveContainer from "../ResponsiveContainer";
 
 const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
@@ -39,10 +38,7 @@ export default ({ news }) => {
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
                     slidesPerView={1}
-                    navigation
                     pagination={{ clickable: true }}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    // onSlideChange={() => console.log('slide change')}
                     className="news-swiper"
                     breakpoints={{
                         1024: {

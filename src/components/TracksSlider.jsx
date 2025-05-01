@@ -20,17 +20,18 @@ export default function TracksSlider({ tracks, age }) {
         <Swiper className="hero-swiper w-full h-auto relative"
             modules={[Navigation, Pagination, A11y]}
             spaceBetween={50}
-            slidesPerView={3}
-            navigation
+            slidesPerView={1}
             pagination={{ clickable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
+            breakpoints={{
+                1024: {
+                  slidesPerView: 3,
+                },
+            }}
         >
             {
                 tracks && tracks.length > 0 && 
                 tracks.map((track) => {
-                    console.log(track, "Here is the track");
-                    return <SwiperSlide key={track.id} className="w-full h-screen flex items-center justify-center slide-1 relative bg-dark p-[1vw] mb-[1vw] rounded-lg">
+                    return <SwiperSlide key={track.id} className="w-full h-screen flex items-center justify-center slide-1 relative bg-dark p-[6vw] lg:p-[1vw] mb-[10vw] lg:mb-[1vw] rounded-lg">
 						<Image className="w-full h-auto" src={getURL(track.banner.url)} width={1438} height={792} alt="slide1"/>
                         <h1 className="text-subtle-gold text-[22px] text-bold mt-3">{ track.trackTitle }</h1>
                         <header className="w-full flex items-end">

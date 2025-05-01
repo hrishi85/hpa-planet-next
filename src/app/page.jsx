@@ -6,18 +6,20 @@ import History from "@/components/Home/history";
 import News from "@/components/Home/news";
 import Contact from "@/components/Home/contact";
 import HeroSection from "@/components/Home/hero";
-import { getURL } from "next/dist/shared/lib/utils";
-
-const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
+import { getURL } from "@/utils";
 
 async function fetchData() {
 	try {
-		console.log( baseURL, "baseURL" );
+		const tracksURL = getURL(`/api/tracks?populate=banner&pagination[limit]=5`);
+		const servicesURL = getURL(`/api/services?populate=thumbnail`);
+		const newpsURL = getURL(`/api/newsp?pagination[limit]=4&populate=banner`);
+		const historyURL = getURL(`/api/history`);
+
 		const [tracksRes, servicesRes, newspRes, historyRes] = await Promise.all([
-			fetch(`${baseURL}/api/tracks?populate=banner&pagination[limit]=5`).then(res => res.json()),
-			fetch(`${baseURL}/api/services?populate=thumbnail`).then(res => res.json()),
-			fetch(`${baseURL}/api/newsp?pagination[limit]=4&populate=banner`).then(res => res.json()),
-			fetch(`${baseURL}/api/history`).then(res => res.json()),
+			fetch(tracksURL).then(res => res.json()),
+			fetch(servicesURL).then(res => res.json()),
+			fetch(newpsURL).then(res => res.json()),
+			fetch(historyURL).then(res => res.json()),
 		]);
   
 		return {

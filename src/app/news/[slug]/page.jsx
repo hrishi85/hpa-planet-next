@@ -11,7 +11,7 @@ import CommentsSection from "@/components/CommentsSection";
 
 import News from '@/components/Home/news';
 
-const baseURL = process.env.STRAPI_API_URL || 'http://localhost:1337';
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
 
 const findNews = async (slug) => {
     const res = await fetch(`${baseURL}/api/newsp/${slug}?populate=banner&populate=comments&populate=tags`, { cache: 'no-store', });
@@ -36,7 +36,7 @@ const getNews = async (excludeId) => {
 };
 
 export default async function NewsPost({ params }) {
-    const { slug } = params;
+    const { slug } = await params;
 
     const news = await findNews(slug);
     const allNews = await getNews(slug);
@@ -59,21 +59,21 @@ export default async function NewsPost({ params }) {
     return (
         <>
             <PageHeader />
-            <section className="w-full">
+            <section className="w-full mt-[60px] lg:mt-0">
                 <ResponsiveContainer>
-                    <article className="w-full my-[3vw] bg-dark flex">
-                        <div className="w-3/5">
+                    <article className="w-full my-[3vw] bg-dark block lg:flex">
+                        <div className="w-full lg:w-3/5">
                             {
                                 banner && (
-                                    <Image className="w-full object-cover" src={`http://localhost:1337${banner.url}`} alt={title} width={1440} height={750} />
+                                    <Image className="w-full object-cover" src={`${baseURL}${banner.url}`} alt={title} width={1440} height={750} />
                                 )
                             }
                         </div>
-                        <section className="flex-1 px-[2.5vw] pt-[1.6vw] pb-[1vw]">
-                            <h1 className="text-[32px] text-subtle-gold font-extrabold uppercase">{title}</h1>
+                        <section className="flex-1 px-[7vw] lg:px-[2.5vw] py-[5vw] lg:py-[1.6vw]">
+                            <h1 className="text-[24px] lg:text-[32px] text-subtle-gold font-extrabold uppercase">{title}</h1>
                             <div className="flex mt-[15px]">
                                 <h3 className="flex-1 text-[16px] italic text-white">Tags</h3>
-                                <h3 className="flex-1 text-[24px] text-subtle-gold text-end mr-[60px]">{ eventDate }</h3>
+                                <h3 className="flex-1 text-[18px] lg:text-[24px] text-subtle-gold text-end mr-0 lg:mr-[60px]">{ eventDate }</h3>
                             </div>
                             <div className="flex flex-row gap-4 mt-[15px]">
                                 {
@@ -101,7 +101,5 @@ export default async function NewsPost({ params }) {
             <PagePFooter />
             <PageFooter />
         </>
-        
-        
     );
 }
