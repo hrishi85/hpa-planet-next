@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from "framer-motion";
 import { getURL } from "next/dist/shared/lib/utils";
 
+const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
 
 const menuItems = [
 	{ title: "Home", route: "/", key: "home" },
@@ -15,7 +16,7 @@ const menuItems = [
 	{ title: "Artists", route: "/artists", key: "artists" },
 	{ title: "News", route: "/news", key: "news" },
 	{ title: "Contact", route: "/contact", key: "contact" },
-	{ title: "Sign In", route: "http://localhost:1337/admin", key: "login" },
+	{ title: "Sign In", route: `${baseURL}/admin`, key: "login" },
 	{ title: "Sign up", route: "/signup", key: "register" },
 ];
 
