@@ -4,11 +4,11 @@ import Link from "next/link";
 const menuItems = [
 	{ title: "Home", route: "/", key: "home" },
 	{ title: "About Us", route: "/about", key: "about" },
-	{ title: "Artists", route: "/artists", key: "artists" },
-	{ title: "News", route: "/news", key: "news" },
+	// { title: "Artists", route: "/artists", key: "artists" },
+	// { title: "News", route: "/news", key: "news" },
 	{ title: "Contact", route: "/contact", key: "contact" },
-	{ title: "Sign In", route: "http://localhost:1337/admin", key: "login" },
-	{ title: "Sign up", route: "/signup", key: "register" },
+	// { title: "Sign In", route: "http://localhost:1337/admin", key: "login" },
+	// { title: "Sign up", route: "/signup", key: "register" },
 ];
 
 export default function PagePFooter() {
