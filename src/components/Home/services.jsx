@@ -9,7 +9,6 @@ const baseURL = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337
 export default function Services({services}) {
 
     const [activeAccordian, setActiveAccordian] = useState(0);
-    const [hoveredAccordian, setHoveredAccordian] = useState(null);
 
     if (!services || services.length === 0) {
 		return <div>Services not found</div>;
@@ -20,13 +19,11 @@ export default function Services({services}) {
             <article className="container px-6 lg:px-0 mx-auto bock lg:flex">
                 <header className="title-block w-full lg:w-1/2 relative pb-12 lg:pb-0">
                     <CustomHeading text1="What We Bring" text2="To the Mix" />
-                    {
-                        hoveredAccordian && (
-                            <div className="w-[90%] mt-4">
-                                <Image src={`${baseURL}${services[hoveredAccordian].thumbnail.url}`} width={714} height={475} alt={services[hoveredAccordian].thumbnail.alternativeText || "HPA Planet Serice"} className="w-full" /> 
-                            </div>
-                        )
-                    }
+                    
+                    <div className="w-[90%] mt-4">
+                        <Image src={`${baseURL}${services[activeAccordian].thumbnail.url}`} width={714} height={475} alt={services[activeAccordian].thumbnail.alternativeText || "HPA Planet Serice"} className="w-full" /> 
+                    </div>       
+                    
                 </header>
                 <section className="w-full lg:w-1/2">
                     <h1 className="text-subtle-gold text-[90px] font-bold leading-[0.6em] align-top pb-2 uppercase opacity-0 hidden lg:block">

@@ -224,6 +224,15 @@ html, body {
     margin-top: -15px;
 }
 
+/* Hero Swiper Settings*/
+.custom-swiper .swiper-pagination {
+    right: 5vw !important;
+    bottom: 5vw !important;
+    left: auto !important;
+    display: flex;
+    justify-content: flex-end;
+  }
+
 .hero-header-bg {
     background: linear-gradient(to bottom,  rgba(0,0,0,0) 10%,rgba(0,0,0,0.95) 100%);
 }
@@ -234,7 +243,7 @@ html, body {
     bottom: 3vw;
 }
 .hero-swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .hero-swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    width: 50px;
+    width: 45px;
     height: 4px;
     border-radius: 2px;
     background: #BFBFBF;
