@@ -16,7 +16,7 @@ const menuItems = [
 	{ title: "Artists", route: "/artists", key: "artists" },
 	{ title: "News", route: "/news", key: "news" },
 	{ title: "Contact", route: "/contact", key: "contact" },
-	{ title: "Sign In", route: `${baseURL}/admin`, key: "login" },
+	{ title: "Sign In", route: `/login`, key: "login" },
 	{ title: "Sign up", route: "/signup", key: "register" },
 ];
 

@@ -13,6 +13,7 @@ export default function Login() {
     const [emailText, setEmailText] = useState("");
 	const [passwordText, setPasswordText] = useState("");
     const [passShow,setPassShow] = useState(false);
+	const [customError, setCustomError] = useState(false);
     // const handleEmailChange =  (event) => {
 	// 	if(event.target.value===""){
     //         return false;
@@ -39,10 +40,32 @@ export default function Login() {
             password: Yup.string().required("Password is required").min(6, "Minimum 6 characters required").max(18, "Maximum limit of 18 exceeded")
     });
 
-    const handleSubmit = (values, { setSubmitting }) => {
-        console.log("Form Data:", values);
-        setSubmitting(false);
-    };
+    const handleSubmit = async (values, { setSubmitting }) => {
+		try {
+			const res = await fetch("/api/login", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ identifier: values.email, password: values.password })
+			});
+
+			const data = await res.json();
+
+			if (!res.ok) {
+				alert(data.message || "Login failed");
+			} else {
+				localStorage.setItem("token", data.jwt);
+				localStorage.setItem("user", JSON.stringify(data.user));
+				alert("Login successful!");
+				// Redirect user as needed
+				router.push("/dashboard");
+			}
+		} catch (error) {
+			console.error("Login error:", error);
+			setCustomError("Something went wrong. Please try again.");
+		} finally {
+			setSubmitting(false);
+		}
+	};
     
     
     return (
@@ -55,6 +78,9 @@ export default function Login() {
                     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                     {({ isSubmitting }) => (
                         <Form className="pt-16">
+							{
+								customError && <p className="text-red-500 text-sm mt-1" >{ customError }</p>
+							}
                             <div className="space-y-4">
                                 <div>
                                     <label htmlFor="email" className="text-white ml-[1px]">Email *</label>
@@ -90,9 +116,9 @@ export default function Login() {
                                 <button className="bg-ocre text-dark block leading-[56px] flex-1 rounded-md  text-center text-lg font-light transition-all hover:bg-gold">
                                     <span className="mr-3">Captcha</span>
                                 </button>
-                                <button className="bg-ocre text-dark block leading-[56px] flex-1 rounded-md text-center text-lg font-light transition-all hover:bg-gold">
-                                    <span className="mr-3">Submit</span>
-                                </button>
+                                <button type="submit" disabled={isSubmitting} className="bg-ocre text-dark block leading-[56px] flex-1 rounded-md text-center text-lg font-light transition-all hover:bg-gold">
+									<span className="mr-3">{isSubmitting ? "Logging in..." : "Submit"}</span>
+								</button>
                             </div>
                         </Form>
                         )}
